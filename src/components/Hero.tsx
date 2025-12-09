@@ -27,11 +27,13 @@ const Hero = () => {
       >
         <div className="mb-8 flex justify-center">
           <div className="relative">
-            <div className="w-48 h-48 rounded-full bg-gradient-to-br from-teal-400 via-blue-400 to-purple-400 p-1 animate-spin-slow">
-              <div className="w-full h-full rounded-full bg-white dark:bg-gray-900 flex items-center justify-center">
-                <div className="w-44 h-44 rounded-full bg-gradient-to-br from-teal-100 to-blue-100 dark:from-teal-900 dark:to-blue-900 flex items-center justify-center text-6xl font-bold text-teal-600 dark:text-teal-400">
-                  RS
-                </div>
+            <div className="w-48 h-48 rounded-full bg-gradient-to-br from-teal-400 via-blue-400 to-purple-400 p-1 shadow-2xl">
+              <div className="w-full h-full rounded-full bg-white dark:bg-gray-900 p-1.5 flex items-center justify-center">
+                <img 
+                  src="/profile.jpg" 
+                  alt="Rithanya Sekar"
+                  className="w-full h-full rounded-full object-cover hover:scale-105 transition-transform duration-300"
+                />
               </div>
             </div>
             <div className="absolute -top-2 -right-2 animate-bounce">
