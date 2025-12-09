@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { Code2, BarChart3, Palette, Database, Brain, FileSpreadsheet } from 'lucide-react';
+import { Code2, Cloud, Brain, Wrench } from 'lucide-react';
 
 interface Skill {
   name: string;
@@ -41,36 +41,62 @@ const Skills = () => {
 
   const skillCategories: SkillCategory[] = [
     {
-      title: 'Technical',
-      description: 'Programming & Development',
+      title: '💻 Languages & Frameworks',
+      description: 'Core Programming & Development',
       color: 'from-teal-400 to-blue-400',
       skills: [
-        { name: 'Python', level: 90, icon: Code2 },
-        { name: 'SQL', level: 85, icon: Database },
-        { name: 'JavaScript/React', level: 80, icon: Code2 },
-        { name: 'Git & Version Control', level: 85, icon: Code2 },
+        { name: 'Python 🐍', level: 95, icon: Code2 },
+        { name: 'SQL 🗄️', level: 90, icon: Code2 },
+        { name: 'JavaScript ✨', level: 85, icon: Code2 },
+        { name: 'R 📐', level: 80, icon: Code2 },
+        { name: 'React ⚛️', level: 85, icon: Code2 },
+        { name: 'PyTorch 🔥', level: 88, icon: Code2 },
+        { name: 'Scikit-Learn 📚', level: 90, icon: Code2 },
+        { name: 'Streamlit 🚀', level: 85, icon: Code2 },
       ],
     },
     {
-      title: 'Analytical',
-      description: 'Data Analysis & Visualization',
+      title: '☁️ Cloud & Data Engineering',
+      description: 'Cloud Platforms & Data Tools',
       color: 'from-blue-400 to-purple-400',
       skills: [
-        { name: 'Power BI', level: 88, icon: BarChart3 },
-        { name: 'Excel & Advanced Analytics', level: 92, icon: FileSpreadsheet },
-        { name: 'Dynamics 365', level: 75, icon: BarChart3 },
-        { name: 'Statistical Analysis', level: 85, icon: BarChart3 },
+        { name: 'AWS ☁️', level: 85, icon: Cloud },
+        { name: 'Oracle Cloud 🍊', level: 80, icon: Cloud },
+        { name: 'Azure 🔷', level: 82, icon: Cloud },
+        { name: 'Power BI 📊', level: 92, icon: Cloud },
+        { name: 'Tableau 📈', level: 88, icon: Cloud },
+        { name: 'Snowflake ❄️', level: 85, icon: Cloud },
+        { name: 'Oracle APEX 🟣', level: 80, icon: Cloud },
+        { name: 'ETL Pipelines', level: 87, icon: Cloud },
       ],
     },
     {
-      title: 'Creative',
-      description: 'AI & Innovation',
+      title: '🤖 AI & Machine Learning',
+      description: 'Advanced AI & Automation',
       color: 'from-purple-400 to-pink-400',
       skills: [
-        { name: 'Machine Learning', level: 82, icon: Brain },
-        { name: 'AI/NLP', level: 80, icon: Brain },
-        { name: 'Problem Solving', level: 95, icon: Palette },
-        { name: 'Innovation & Design', level: 88, icon: Palette },
+        { name: 'Machine Learning ⭐', level: 90, icon: Brain },
+        { name: 'GenAI 💡', level: 88, icon: Brain },
+        { name: 'Hugging Face 🤗', level: 85, icon: Brain },
+        { name: 'LangChain 🔗', level: 87, icon: Brain },
+        { name: 'N8N 🤖', level: 82, icon: Brain },
+        { name: 'CrewAI 🧠', level: 85, icon: Brain },
+        { name: 'NLP & LLMs', level: 88, icon: Brain },
+        { name: 'Predictive Analytics 📈', level: 90, icon: Brain },
+      ],
+    },
+    {
+      title: '🧩 Dev Tools & Workflow',
+      description: 'Project Management & Tools',
+      color: 'from-pink-400 to-orange-400',
+      skills: [
+        { name: 'Git & Version Control', level: 90, icon: Wrench },
+        { name: 'Jira 🗂️', level: 85, icon: Wrench },
+        { name: 'Agile/Scrum', level: 88, icon: Wrench },
+        { name: 'VS Code', level: 95, icon: Wrench },
+        { name: 'Jupyter Notebook', level: 92, icon: Wrench },
+        { name: 'Power Query', level: 90, icon: Wrench },
+        { name: 'Lean Six Sigma ⚙️', level: 80, icon: Wrench },
       ],
     },
   ];
@@ -92,11 +118,11 @@ const Skills = () => {
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-teal-500 to-pink-500 mx-auto rounded-full"></div>
           <p className="mt-6 text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            A blend of technical prowess, analytical thinking, and creative innovation
+            A comprehensive toolkit spanning data science, AI, cloud technologies, and beyond
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 gap-8">
           {skillCategories.map((category, categoryIndex) => (
             <div
               key={categoryIndex}
@@ -108,7 +134,7 @@ const Skills = () => {
                 <div
                   className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${category.color} flex items-center justify-center mb-6 mx-auto`}
                 >
-                  <Code2 className="w-8 h-8 text-white" />
+                  {category.skills[0] && <category.skills[0].icon className="w-8 h-8 text-white" />}
                 </div>
                 <h3 className="text-2xl font-bold text-gray-800 dark:text-white text-center mb-2">
                   {category.title}
@@ -125,11 +151,11 @@ const Skills = () => {
                         <div className="flex items-center justify-between mb-2">
                           <div className="flex items-center gap-2">
                             <Icon className="w-4 h-4 text-teal-500" />
-                            <span className="text-gray-700 dark:text-gray-300 font-medium">
+                            <span className="text-gray-700 dark:text-gray-300 font-medium text-sm">
                               {skill.name}
                             </span>
                           </div>
-                          <span className="text-teal-600 dark:text-teal-400 font-bold">
+                          <span className="text-teal-600 dark:text-teal-400 font-bold text-sm">
                             {skill.level}%
                           </span>
                         </div>
