@@ -28,7 +28,7 @@ const About = () => {
 
   const timeline = [
     {
-      year: '2024-Present',
+      year: 'Jan 2025-Present',
       title: 'MS in Information Systems',
       subtitle: 'AI Track at Florida International University',
       icon: GraduationCap,
@@ -36,8 +36,8 @@ const About = () => {
     },
     {
       year: '2023',
-      title: 'Data Analytics Journey',
-      subtitle: 'Specialized in Business Intelligence & AI',
+      title: 'Business Analytics Journey',
+      subtitle: 'Specialized in Business Intelligence & Analysis @Jungroo Learning',
       icon: Lightbulb,
       color: 'from-blue-400 to-purple-400',
     },
@@ -55,7 +55,7 @@ const About = () => {
     'Data visualization is my art form & dashboards are my canvas.',
     'I push myself into spaces that are new often',
     'Coffee-powered problem solver',
-    'I talk to my code as if it can hear me (and sometimes it listens).',
+    'I talk to my code as if it can hear me, and sometimes it listens.',
   ];
 
   return (
