@@ -38,37 +38,40 @@ const Projects = () => {
     };
   }, []);
 
+  // ⬇️ EDIT YOUR PROJECTS HERE ⬇️
   const projects: Project[] = [
     {
-      title: 'Payanam AI',
-      description: 'An intelligent travel companion that personalizes your journey',
-      icon: Plane,
-      color: 'from-teal-400 to-blue-400',
-      techStack: ['Python', 'TensorFlow', 'NLP', 'React', 'API Integration'],
+      title: 'Payanam AI', // 👈 Change this
+      description: 'An intelligent travel companion that personalizes your journey', // 👈 Change this
+      icon: Plane, // 👈 Keep or change icon (Plane, Calendar, Heart, etc.)
+      color: 'from-teal-400 to-blue-400', // 👈 Keep or change gradient
+      techStack: ['Python', 'SQL', 'React', 'NLP','TensorFlow','API Integration'], // 👈 Add your tech stack
       details:
-        'Payanam AI is an AI-powered travel assistant that creates personalized itineraries based on user preferences, budget, and interests. It uses machine learning to understand travel patterns and suggests optimal routes, accommodations, and activities. The system learns from user feedback to improve recommendations over time.',
-      github: '#',
-      demo: '#',
+        'Payanam AI is an AI-powered travel assistant that creates personalized itineraries based on user preferences, budget, and interests. It uses machine learning to understand travel patterns and suggests optimal routes, accommodations, and activities. The system learns from user feedback to improve recommendations over time.', // 👈 Change this
+      github: 'https://github.com/Rithanya918/Payanam', // 👈 Add your GitHub URL
+      demo: 'https://github.com/Rithanya918/Payanam', // 👈 Add your live demo URL (or remove this line if no demo)
     },
     {
-      title: 'Mood-Aware Scheduling Agent',
-      description: 'Smart scheduler that adapts to your emotional state',
-      icon: Calendar,
-      color: 'from-blue-400 to-purple-400',
-      techStack: ['Python', 'Sentiment Analysis', 'ML', 'Calendar API'],
+      title: 'Project 2 Title', // 👈 Change this
+      description: 'Short one-line description of your project', // 👈 Change this
+      icon: Calendar, // 👈 Keep or change icon
+      color: 'from-blue-400 to-purple-400', // 👈 Keep or change gradient
+      techStack: ['Python', 'Oracle', 'Machine Learning'], // 👈 Add your tech stack
       details:
-        'This innovative scheduling system analyzes your mood and energy levels to optimize your daily schedule. It uses sentiment analysis to detect emotional patterns and adjusts meeting times and task priorities accordingly. The agent learns your productivity patterns and suggests the best times for different types of activities.',
-      github: '#',
+        'Detailed description of your second project. Include key features, impact, and technical highlights.', // 👈 Change this
+      github: 'https://github.com/Rithanya918/your-repo-name-2', // 👈 Add your GitHub URL
+      demo: 'https://your-demo-url-2.com', // 👈 Add your live demo URL (or remove this line if no demo)
     },
     {
-      title: 'Wellness Coach App',
-      description: 'Your personal AI wellness companion',
-      icon: Heart,
-      color: 'from-purple-400 to-pink-400',
-      techStack: ['React Native', 'Python', 'ML', 'Health APIs', 'Firebase'],
+      title: 'Project 3 Title', // 👈 Change this
+      description: 'Short one-line description of your project', // 👈 Change this
+      icon: Heart, // 👈 Keep or change icon
+      color: 'from-purple-400 to-pink-400', // 👈 Keep or change gradient
+      techStack: ['Python', 'Tableau', 'Power BI', 'ETL'], // 👈 Add your tech stack
       details:
-        'A comprehensive wellness application that combines AI with health data to provide personalized fitness and mental health recommendations. It tracks physical activity, sleep patterns, and emotional well-being to offer tailored advice. The app includes meditation guides, workout plans, and nutrition tracking with intelligent insights.',
-      demo: '#',
+        'Detailed description of your third project. Highlight achievements, technical challenges overcome, and results.', // 👈 Change this
+      github: 'https://github.com/Rithanya918/your-repo-name-3', // 👈 Add your GitHub URL
+      demo: 'https://your-demo-url-3.com', // 👈 Add your live demo URL (or remove this line if no demo)
     },
   ];
 
