@@ -46,7 +46,7 @@ const Contact = () => {
     {
       name: 'LinkedIn',
       icon: Linkedin,
-      url: 'https://www.linkedin.com/in/YOUR-LINKEDIN-USERNAME/', // 👈 Add your LinkedIn URL here
+      url: 'https://www.linkedin.com/in/rithanya-sekar-/', // 👈 Add your LinkedIn URL here
       color: 'from-blue-500 to-blue-600',
       hoverColor: 'hover:from-blue-600 hover:to-blue-700',
     },
@@ -60,7 +60,7 @@ const Contact = () => {
     {
       name: 'Email',
       icon: Mail,
-      url: 'mailto:your.email@example.com', // 👈 Add your email here
+      url: 'mailto:rseka002@fiu.edu', // 👈 Add your email here
       color: 'from-teal-500 to-blue-500',
       hoverColor: 'hover:from-teal-600 hover:to-blue-600',
     },
