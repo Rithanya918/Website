@@ -11,6 +11,7 @@ interface SkillCategory {
   title: string;
   description: string;
   color: string;
+  categoryIcon: React.ElementType;
   skills: Skill[];
 }
 
@@ -44,6 +45,7 @@ const Skills = () => {
       title: 'Languages & Frameworks',
       description: 'Programming & Development',
       color: 'from-teal-400 to-blue-400',
+      categoryIcon: Code2,
       skills: [
         { name: 'Python', level: 95, icon: Code2 },
         { name: 'SQL', level: 90, icon: Database },
@@ -59,6 +61,7 @@ const Skills = () => {
       title: 'Cloud & Data Engineering',
       description: 'Cloud Platforms & Data Tools',
       color: 'from-blue-400 to-purple-400',
+      categoryIcon: Cloud,
       skills: [
         { name: 'AWS', level: 85, icon: Cloud },
         { name: 'Oracle Cloud', level: 80, icon: Cloud },
@@ -74,6 +77,7 @@ const Skills = () => {
       title: 'AI & Machine Learning',
       description: 'Advanced AI & Automation',
       color: 'from-purple-400 to-pink-400',
+      categoryIcon: Brain,
       skills: [
         { name: 'Machine Learning', level: 90, icon: Brain },
         { name: 'GenAI', level: 88, icon: Brain },
@@ -89,6 +93,7 @@ const Skills = () => {
       title: 'Dev Tools & Workflow',
       description: 'Project Management & Tools',
       color: 'from-pink-400 to-orange-400',
+      categoryIcon: Wrench,
       skills: [
         { name: 'Git & Version Control', level: 90, icon: Wrench },
         { name: 'Jira', level: 85, icon: Wrench },
@@ -107,7 +112,7 @@ const Skills = () => {
       ref={sectionRef}
       className="relative py-20 px-6"
     >
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-[1400px] mx-auto">
         <div
           className={`text-center mb-16 transition-all duration-1000 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
@@ -122,60 +127,63 @@ const Skills = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          {skillCategories.map((category, categoryIndex) => (
-            <div
-              key={categoryIndex}
-              className={`transition-all duration-1000 ${
-                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-              }`}
-              style={{ transitionDelay: `${categoryIndex * 200}ms` }}
-            >
-              <div className="bg-white dark:bg-gray-800 rounded-3xl p-6 shadow-xl hover:shadow-2xl transition-shadow duration-300 h-full">
-                <div
-                  className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${category.color} flex items-center justify-center mb-6 mx-auto`}
-                >
-                  <Code2 className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-xl font-bold text-gray-800 dark:text-white text-center mb-2">
-                  {category.title}
-                </h3>
-                <p className="text-gray-600 dark:text-gray-300 text-center mb-6 text-xs">
-                  {category.description}
-                </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
+          {skillCategories.map((category, categoryIndex) => {
+            const CategoryIcon = category.categoryIcon;
+            return (
+              <div
+                key={categoryIndex}
+                className={`transition-all duration-1000 ${
+                  isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+                }`}
+                style={{ transitionDelay: `${categoryIndex * 200}ms` }}
+              >
+                <div className="bg-white dark:bg-gray-800 rounded-3xl p-6 shadow-xl hover:shadow-2xl transition-shadow duration-300 h-full">
+                  <div
+                    className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${category.color} flex items-center justify-center mb-6 mx-auto`}
+                  >
+                    <CategoryIcon className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-800 dark:text-white text-center mb-2">
+                    {category.title}
+                  </h3>
+                  <p className="text-gray-600 dark:text-gray-300 text-center mb-6 text-xs">
+                    {category.description}
+                  </p>
 
-                <div className="space-y-4">
-                  {category.skills.map((skill, skillIndex) => {
-                    const Icon = skill.icon;
-                    return (
-                      <div key={skillIndex}>
-                        <div className="flex items-center justify-between mb-2">
-                          <div className="flex items-center gap-2">
-                            <Icon className="w-3 h-3 text-teal-500 flex-shrink-0" />
-                            <span className="text-gray-700 dark:text-gray-300 font-medium text-xs">
-                              {skill.name}
+                  <div className="space-y-4">
+                    {category.skills.map((skill, skillIndex) => {
+                      const Icon = skill.icon;
+                      return (
+                        <div key={skillIndex}>
+                          <div className="flex items-center justify-between mb-2">
+                            <div className="flex items-center gap-2">
+                              <Icon className="w-3 h-3 text-teal-500 flex-shrink-0" />
+                              <span className="text-gray-700 dark:text-gray-300 font-medium text-xs">
+                                {skill.name}
+                              </span>
+                            </div>
+                            <span className="text-teal-600 dark:text-teal-400 font-bold text-xs">
+                              {skill.level}%
                             </span>
                           </div>
-                          <span className="text-teal-600 dark:text-teal-400 font-bold text-xs">
-                            {skill.level}%
-                          </span>
+                          <div className="h-2 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
+                            <div
+                              className={`h-full bg-gradient-to-r ${category.color} rounded-full transition-all duration-1000 ease-out`}
+                              style={{
+                                width: isVisible ? `${skill.level}%` : '0%',
+                                transitionDelay: `${(categoryIndex * 200) + (skillIndex * 100)}ms`,
+                              }}
+                            ></div>
+                          </div>
                         </div>
-                        <div className="h-2 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
-                          <div
-                            className={`h-full bg-gradient-to-r ${category.color} rounded-full transition-all duration-1000 ease-out`}
-                            style={{
-                              width: isVisible ? `${skill.level}%` : '0%',
-                              transitionDelay: `${(categoryIndex * 200) + (skillIndex * 100)}ms`,
-                            }}
-                          ></div>
-                        </div>
-                      </div>
-                    );
-                  })}
+                      );
+                    })}
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
         <div
