@@ -41,25 +41,26 @@ const Contact = () => {
     }, 3000);
   };
 
+  // ⬇️ UPDATE YOUR LINKS HERE ⬇️
   const socialLinks = [
     {
       name: 'LinkedIn',
       icon: Linkedin,
-      url: '#',
+      url: 'https://www.linkedin.com/in/YOUR-LINKEDIN-USERNAME/', // 👈 Add your LinkedIn URL here
       color: 'from-blue-500 to-blue-600',
       hoverColor: 'hover:from-blue-600 hover:to-blue-700',
     },
     {
       name: 'GitHub',
       icon: Github,
-      url: '#',
+      url: 'https://github.com/Rithanya918', // 👈 Add your GitHub URL here
       color: 'from-gray-700 to-gray-800',
       hoverColor: 'hover:from-gray-800 hover:to-gray-900',
     },
     {
       name: 'Email',
       icon: Mail,
-      url: 'mailto:rithanya@example.com',
+      url: 'mailto:your.email@example.com', // 👈 Add your email here
       color: 'from-teal-500 to-blue-500',
       hoverColor: 'hover:from-teal-600 hover:to-blue-600',
     },
