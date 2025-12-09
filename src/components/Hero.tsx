@@ -1,4 +1,4 @@
-import { Sparkles, ArrowDown, Award } from 'lucide-react';
+import { Sparkles, ArrowDown, Award, ExternalLink } from 'lucide-react';
 import { useEffect, useState } from 'react';
 
 const Hero = () => {
@@ -15,11 +15,24 @@ const Hero = () => {
     }
   };
 
+  // ⬇️ ADD YOUR CERTIFICATION LINKS HERE ⬇️
   const certifications = [
-    'Oracle APEX Cloud Developer Professional',
-    'Oracle Cloud Infrastructure 2025 Data Science Professional',
-    'Lean Six Sigma Black Belt – Level III',
-    'Microsoft Business Analyst Professional',
+    {
+      name: 'Oracle APEX Cloud Developer Professional',
+      url: 'https://catalog-education.oracle.com/ords/certview/sharebadge?id=316F56963AC206F52BDA1FAAD8F787DE9C86A003647A34BF33E23C7FAD8CCBA3', // 👈 Add your Oracle APEX cert link
+    },
+    {
+      name: 'Oracle Cloud Infrastructure 2025 Data Science Professional',
+      url: 'https://catalog-education.oracle.com/ords/certview/sharebadge?id=DF0FE707B56962BE66C40D00A9D1FC49CC80A20DF11163E0CF6EFB838C6CCE02', // 👈 Add your OCI cert link
+    },
+    {
+      name: 'Lean Six Sigma Black Belt – Level III',
+      url: 'https://the.glss.app/public/certificates/91296', // 👈 Add your Lean Six Sigma cert link
+    },
+    {
+      name: 'Microsoft Business Analyst Professional',
+      url: 'https://www.coursera.org/account/accomplishments/specialization/BX178V1LL5MD?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=prof', // 👈 Add your Microsoft cert link
+    },
   ];
 
   return (
@@ -73,17 +86,21 @@ const Hero = () => {
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 {certifications.map((cert, index) => (
-                  <div
+                  <a
                     key={index}
-                    className="flex items-center gap-3 bg-gradient-to-br from-teal-50 to-blue-50 dark:from-gray-800 dark:to-gray-700 rounded-xl p-3 hover:scale-105 transition-transform duration-300"
+                    href={cert.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group flex items-center gap-3 bg-gradient-to-br from-teal-50 to-blue-50 dark:from-gray-800 dark:to-gray-700 rounded-xl p-3 hover:scale-105 hover:shadow-lg transition-all duration-300 cursor-pointer"
                   >
-                    <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-teal-500 to-blue-500 flex items-center justify-center flex-shrink-0">
+                    <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-teal-500 to-blue-500 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
                       <Award className="w-4 h-4 text-white" />
                     </div>
-                    <span className="text-sm font-medium text-gray-700 dark:text-gray-300 text-left">
-                      {cert}
+                    <span className="text-sm font-medium text-gray-700 dark:text-gray-300 text-left flex-1 group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-colors">
+                      {cert.name}
                     </span>
-                  </div>
+                    <ExternalLink className="w-4 h-4 text-gray-400 group-hover:text-teal-500 transition-colors flex-shrink-0" />
+                  </a>
                 ))}
               </div>
             </div>
