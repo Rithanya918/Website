@@ -51,10 +51,11 @@ const About = () => {
   ];
 
   const funFacts = [
-    'I speak fluent Python and SQL',
-    'Data visualization is my art form',
-    'I believe AI can make the world more human',
+    'I speak fluent Python and SQL languages',
+    'Data visualization is my art form & dashboards are my canvas.',
+    'I push myself into spaces that are new often',
     'Coffee-powered problem solver',
+    'I talk to my code as if it can hear me (and sometimes it listens).',
   ];
 
   return (
