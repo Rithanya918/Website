@@ -1,14 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
-import { Mail, Linkedin, Github, Send, Sparkles } from 'lucide-react';
+import { Mail, Linkedin, Github, BookOpen, Calendar, ArrowRight, Sparkles } from 'lucide-react';
 
 const Contact = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: '',
-  });
-  const [submitted, setSubmitted] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -31,15 +25,6 @@ const Contact = () => {
       }
     };
   }, []);
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => {
-      setSubmitted(false);
-      setFormData({ name: '', email: '', message: '' });
-    }, 3000);
-  };
 
   // ⬇️ UPDATE YOUR LINKS HERE ⬇️
   const socialLinks = [
@@ -66,6 +51,31 @@ const Contact = () => {
     },
   ];
 
+  // ⬇️ UPDATE YOUR BLOG POSTS HERE ⬇️
+  const blogPosts = [
+    {
+      title: '10 Tips for Data Visualization',
+      date: 'December 2024',
+      description: 'Essential techniques to make your data tell compelling stories',
+      url: '#', // 👈 Add your blog post URL here
+      color: 'from-teal-400 to-blue-400',
+    },
+    {
+      title: 'My Journey into AI',
+      date: 'November 2024',
+      description: 'How I transitioned from data analytics to artificial intelligence',
+      url: '#', // 👈 Add your blog post URL here
+      color: 'from-blue-400 to-purple-400',
+    },
+    {
+      title: 'Building ML Pipelines',
+      date: 'October 2024',
+      description: 'A practical guide to creating production-ready machine learning workflows',
+      url: '#', // 👈 Add your blog post URL here
+      color: 'from-purple-400 to-pink-400',
+    },
+  ];
+
   return (
     <section
       id="contact"
@@ -88,84 +98,73 @@ const Contact = () => {
         </div>
 
         <div className="grid md:grid-cols-2 gap-12 items-start">
+          {/* Latest Insights Section */}
           <div
             className={`transition-all duration-1000 delay-200 ${
               isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'
             }`}
           >
             <div className="bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-xl">
-              <h3 className="text-2xl font-bold text-gray-800 dark:text-white mb-6">
-                Send a Message
-              </h3>
-
-              {submitted ? (
-                <div className="text-center py-12 animate-scaleIn">
-                  <div className="w-20 h-20 bg-gradient-to-br from-teal-400 to-blue-400 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Sparkles className="w-10 h-10 text-white" fill="currentColor" />
-                  </div>
-                  <h4 className="text-2xl font-bold text-gray-800 dark:text-white mb-2">
-                    Message Sent!
-                  </h4>
-                  <p className="text-gray-600 dark:text-gray-300">
-                    Thanks for reaching out! I'll get back to you soon.
-                  </p>
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-teal-500 to-blue-500 flex items-center justify-center">
+                  <BookOpen className="w-6 h-6 text-white" />
                 </div>
-              ) : (
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div>
-                    <label className="block text-gray-700 dark:text-gray-300 font-medium mb-2">
-                      Your Name
-                    </label>
-                    <input
-                      type="text"
-                      required
-                      value={formData.name}
-                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-800 dark:text-white focus:border-teal-500 dark:focus:border-teal-400 outline-none transition-colors duration-300"
-                      placeholder="John Doe"
-                    />
-                  </div>
+                <h3 className="text-2xl font-bold text-gray-800 dark:text-white">
+                  Latest Insights
+                </h3>
+              </div>
 
-                  <div>
-                    <label className="block text-gray-700 dark:text-gray-300 font-medium mb-2">
-                      Your Email
-                    </label>
-                    <input
-                      type="email"
-                      required
-                      value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-800 dark:text-white focus:border-teal-500 dark:focus:border-teal-400 outline-none transition-colors duration-300"
-                      placeholder="john@example.com"
-                    />
-                  </div>
+              <p className="text-gray-600 dark:text-gray-300 mb-6">
+                Sharing my thoughts on data science, AI, and technology
+              </p>
 
-                  <div>
-                    <label className="block text-gray-700 dark:text-gray-300 font-medium mb-2">
-                      Message
-                    </label>
-                    <textarea
-                      required
-                      value={formData.message}
-                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      rows={5}
-                      className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-800 dark:text-white focus:border-teal-500 dark:focus:border-teal-400 outline-none transition-colors duration-300 resize-none"
-                      placeholder="Tell me about your project or idea..."
-                    />
-                  </div>
-
-                  <button
-                    type="submit"
-                    className="w-full px-8 py-4 bg-gradient-to-r from-teal-500 to-blue-500 text-white rounded-xl font-medium hover:shadow-lg hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2"
+              <div className="space-y-4">
+                {blogPosts.map((post, index) => (
+                  <a
+                    key={index}
+                    href={post.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block group"
                   >
-                    <Send className="w-5 h-5" />
-                    Send Message
-                  </button>
-                </form>
-              )}
+                    <div className="bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-700 dark:to-gray-600 rounded-2xl p-5 hover:shadow-lg transition-all duration-300 hover:scale-[1.02]">
+                      <div className="flex items-start justify-between gap-4">
+                        <div className="flex-1">
+                          <h4 className="text-lg font-bold text-gray-800 dark:text-white mb-2 group-hover:text-teal-500 dark:group-hover:text-teal-400 transition-colors">
+                            {post.title}
+                          </h4>
+                          <p className="text-sm text-gray-600 dark:text-gray-300 mb-3">
+                            {post.description}
+                          </p>
+                          <div className="flex items-center gap-2 text-xs text-gray-500 dark:text-gray-400">
+                            <Calendar className="w-3 h-3" />
+                            <span>{post.date}</span>
+                          </div>
+                        </div>
+                        <div className={`w-10 h-10 rounded-lg bg-gradient-to-br ${post.color} flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300`}>
+                          <ArrowRight className="w-5 h-5 text-white" />
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                ))}
+              </div>
+
+              <div className="mt-6 text-center">
+                <a
+                  href="#" // 👈 Add link to your full blog/Medium/etc
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-teal-600 dark:text-teal-400 font-medium hover:gap-3 transition-all duration-300"
+                >
+                  View All Articles
+                  <ArrowRight className="w-4 h-4" />
+                </a>
+              </div>
             </div>
           </div>
 
+          {/* Connect with Me Section */}
           <div
             className={`transition-all duration-1000 delay-400 ${
               isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'
