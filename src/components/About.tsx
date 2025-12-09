@@ -90,11 +90,10 @@ const About = () => {
               </div>
               <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
                 Hello! I'm Rithanya, a data-driven professional with a passion for turning complex datasets into actionable insights. 
-                My journey in the world of AI and Data Science is fueled by curiosity and a deep love for problem-solving.
+                I’m someone who sees the world through patterns and possibilities, with a deep interest in AI, ML, and data science. My curiosity about prediction and intelligent systems led me into the world of models, analytics, and automation.
               </p>
               <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-                I’m someone who sees the world through patterns and possibilities, with a deep interest in AI, ML, and data science. My curiosity about prediction and intelligent systems led me into the world of models, analytics, and automation.
-                Today, I blend technical skill with creative problem-solving to build AI solutions that feel intuitive and human-centered. From predictive engines to AI wellness coaches, I love bringing machine intelligence to life in ways that genuinely help people.
+              Today, I blend technical skill with creative problem-solving to bringing machine intelligence to life in ways that thinks, learns, and improves the way we live.
               </p>
             </div>
           </div>
