@@ -79,7 +79,6 @@ const Hero = () => {
           <div className="bg-gradient-to-r from-teal-500 via-blue-500 to-purple-500 rounded-2xl p-1">
             <div className="bg-white dark:bg-gray-900 rounded-2xl p-6">
               <div className="flex items-center justify-center gap-2 mb-4">
-                <Award className="w-5 h-5 text-teal-500" />
                 <h3 className="text-lg font-bold text-gray-800 dark:text-white">
                   Certifications
                 </h3>
