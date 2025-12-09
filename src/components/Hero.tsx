@@ -1,4 +1,4 @@
-import { Sparkles, ArrowDown } from 'lucide-react';
+import { Sparkles, ArrowDown, Award } from 'lucide-react';
 import { useEffect, useState } from 'react';
 
 const Hero = () => {
@@ -14,6 +14,13 @@ const Hero = () => {
       element.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   };
+
+  const certifications = [
+    'Oracle APEX Cloud Developer Professional',
+    'Oracle Cloud Infrastructure 2025 Data Science Professional',
+    'Lean Six Sigma Black Belt – Level III',
+    'Microsoft Business Analyst Professional',
+  ];
 
   return (
     <section
@@ -50,9 +57,38 @@ const Hero = () => {
           Turning Data into Decisions
         </p>
 
-        <p className="text-lg md:text-xl text-gray-600 dark:text-gray-400 mb-12 max-w-3xl mx-auto">
+        <p className="text-lg md:text-xl text-gray-600 dark:text-gray-400 mb-8 max-w-3xl mx-auto">
           Blending AI, Insight, and Imagination
         </p>
+
+        {/* Certifications Section */}
+        <div className="mb-12 max-w-4xl mx-auto">
+          <div className="bg-gradient-to-r from-teal-500 via-blue-500 to-purple-500 rounded-2xl p-1">
+            <div className="bg-white dark:bg-gray-900 rounded-2xl p-6">
+              <div className="flex items-center justify-center gap-2 mb-4">
+                <Award className="w-5 h-5 text-teal-500" />
+                <h3 className="text-lg font-bold text-gray-800 dark:text-white">
+                  Certifications
+                </h3>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                {certifications.map((cert, index) => (
+                  <div
+                    key={index}
+                    className="flex items-center gap-3 bg-gradient-to-br from-teal-50 to-blue-50 dark:from-gray-800 dark:to-gray-700 rounded-xl p-3 hover:scale-105 transition-transform duration-300"
+                  >
+                    <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-teal-500 to-blue-500 flex items-center justify-center flex-shrink-0">
+                      <Award className="w-4 h-4 text-white" />
+                    </div>
+                    <span className="text-sm font-medium text-gray-700 dark:text-gray-300 text-left">
+                      {cert}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
 
         <div className="flex flex-wrap justify-center gap-4 mb-16">
           <button
