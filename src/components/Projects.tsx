@@ -52,14 +52,14 @@ const Projects = () => {
       demo: 'https://github.com/Rithanya918/Payanam', // 👈 Add your live demo URL (or remove this line if no demo)
     },
     {
-      title: 'Project 2 Title', // 👈 Change this
-      description: 'Short one-line description of your project', // 👈 Change this
-      icon: Calendar, // 👈 Keep or change icon
+      title: 'PricinIQ', // 👈 Change this
+      description: 'Dynamic Pricing suggestion Engine powered by AI & ML', // 👈 Change this
+      icon: dollers, // 👈 Keep or change icon
       color: 'from-blue-400 to-purple-400', // 👈 Keep or change gradient
-      techStack: ['Python', 'Oracle', 'Machine Learning'], // 👈 Add your tech stack
+      techStack: ['Python', 'Hugginface', 'Machine Learning', 'SQL'], // 👈 Add your tech stack
       details:
         'Detailed description of your second project. Include key features, impact, and technical highlights.', // 👈 Change this
-      github: 'https://github.com/Rithanya918/your-repo-name-2', // 👈 Add your GitHub URL
+      github: 'https://huggingface.co/spaces/Rithanya918/CGPricing_dupe3, // 👈 Add your GitHub URL
       demo: 'https://your-demo-url-2.com', // 👈 Add your live demo URL (or remove this line if no demo)
     },
     {
