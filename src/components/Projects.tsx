@@ -58,7 +58,8 @@ const Projects = () => {
       color: 'from-blue-400 to-purple-400', // 👈 Keep or change gradient
       techStack: ['Python', 'Hugginface', 'Machine Learning', 'SQL'], // 👈 Add your tech stack
       details:
-        'Detailed description of your second project. Include key features, impact, and technical highlights.', // 👈 Change this
+        'Detailed description of your second project. ' +
+             'Include key features, impact, and technical highlights.', // 👈 Change this
       github: 'https://github.com/Rithanya918/Payanam', // 👈 Add your GitHub URL
       demo: 'https://huggingface.co/spaces/Rithanya918/CGPricing_dupe3', // 👈 Add your live demo URL (or remove this line if no demo)
     },
