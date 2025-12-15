@@ -59,8 +59,8 @@ const Projects = () => {
       techStack: ['Python', 'Hugginface', 'Machine Learning', 'SQL'], // 👈 Add your tech stack
       details:
         'Detailed description of your second project. Include key features, impact, and technical highlights.', // 👈 Change this
-      github: 'https://huggingface.co/spaces/Rithanya918/CGPricing_dupe3', // 👈 Add your GitHub URL
-      demo: 'https://your-demo-url-2.com', // 👈 Add your live demo URL (or remove this line if no demo)
+      github: 'https://github.com/Rithanya918/Payanam', // 👈 Add your GitHub URL
+      demo: 'https://huggingface.co/spaces/Rithanya918/CGPricing_dupe3', // 👈 Add your live demo URL (or remove this line if no demo)
     },
     {
       title: 'Project 3 Title', // 👈 Change this
