@@ -1,0 +1,195 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+      
+      - name: Install dependencies
+        run: npm ci
+      
+      - name: Build
+        run: npm run build
+      
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+      
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './dist'
+      
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+```
+
+5. **Scroll down** and click **"Commit changes"**
+6. Click **"Commit changes"** again in the popup
+
+---
+
+### **Step 3: Enable GitHub Pages**
+
+1. **Go to**: `https://github.com/Rithanya918/Website/settings/pages`
+2. Under **"Build and deployment"**:
+   - **Source**: Select **"GitHub Actions"** (NOT "Deploy from a branch")
+3. That's it! No need to save, it auto-updates
+
+---
+
+### **Step 4: Wait for Deployment**
+
+1. **Go to**: `https://github.com/Rithanya918/Website/actions`
+2. You should see a workflow running: **"Deploy to GitHub Pages"**
+3. **Click on it** to watch progress
+4. It will show:
+   - ⏳ Running (yellow dot)
+   - ✅ Success (green checkmark) - takes 2-3 minutes
+   - ❌ Failed (red X) - if error, screenshot and share with me
+
+---
+
+### **Step 5: Visit Your Live Site! 🎉**
+
+Once the workflow shows ✅ green checkmark:
+
+**Your site is live at:**
+```
+https://Rithanya918.github.io/Website/
+```
+
+---
+
+## **✅ What Happens Now (Forever):**
+
+Every time you update your code:
+
+1. **You**: Edit files on GitHub
+2. **You**: Commit and push
+3. **GitHub Actions**: Automatically detects change
+4. **GitHub Actions**: Builds your site
+5. **GitHub Actions**: Deploys to GitHub Pages
+6. ✅ **Your site updates** in 2-3 minutes
+
+**You never need to do anything manual!** 🎉
+
+---
+
+## **🔧 Troubleshooting (If Workflow Fails):**
+
+### **If you see ❌ Red X:**
+
+1. Click on the failed workflow
+2. Click on the "build" job
+3. Look for red error messages
+4. **Screenshot the error** and share with me
+
+### **Common Issues & Fixes:**
+
+**Error: "npm ci can't find package-lock.json"**
+- **Fix**: Change `npm ci` to `npm install` in the workflow file
+
+**Error: "Build failed"**
+- **Fix**: Same ParticlesBackground issue - make sure App.tsx is updated
+
+**Error: "Permission denied"**
+- **Fix**: Go to Settings → Actions → General → Workflow permissions → Select "Read and write permissions" → Save
+
+---
+
+## **📱 After Successful Deployment:**
+
+### **Your URLs:**
+- **Main site**: `https://Rithanya918.github.io/Website/`
+- **Repo**: `https://github.com/Rithanya918/Website`
+
+### **Update Your README:**
+
+Add your live site link to your GitHub repo:
+
+1. Go to your repo main page
+2. Click the gear icon ⚙️ next to "About"
+3. Add website: `https://Rithanya918.github.io/Website/`
+4. Add description: "My personal portfolio showcasing data science and AI projects"
+5. Click "Save"
+
+---
+
+## **🎨 Optional: Custom Domain**
+
+Want `rithanya.com` instead of `github.io`?
+
+1. **Buy a domain** from Namecheap or Google Domains ($10-15/year)
+2. **In GitHub**: Settings → Pages → Custom domain
+3. **Add your domain** and follow DNS setup instructions
+4. **Free SSL** included automatically!
+
+---
+
+## **📊 Quick Reference:**
+
+| Action | What Happens |
+|--------|--------------|
+| Push to main branch | ✅ Auto-deploys in 2-3 min |
+| Push to other branch | ❌ Doesn't deploy |
+| Manual trigger | ✅ Can trigger from Actions tab |
+| Site URL | `Rithanya918.github.io/Website/` |
+| Build time | ~2-3 minutes |
+| Always awake? | ✅ Yes, 24/7 |
+| Cost | ✅ $0 forever |
+
+---
+
+## **🎯 Next Steps:**
+
+1. **Complete Steps 1-4 above**
+2. **Wait for green checkmark** in Actions tab
+3. **Visit**: `https://Rithanya918.github.io/Website/`
+4. **Share your success!** 🎉
+
+---
+
+## **💡 Pro Tips:**
+
+### **To Update Your Site in the Future:**
+
+1. Edit files on GitHub (or push from local)
+2. Wait 2-3 minutes
+3. Hard refresh your browser (Ctrl+Shift+R)
+4. See your changes live!
+
+### **To Check Deployment Status:**
+
+- Go to: `https://github.com/Rithanya918/Website/actions`
+- See all your deployments
+- Click any to see build logs
+
+### **To Add to Resume/LinkedIn:**
+
+Use this clean URL format:
+```
+Portfolio: https://Rithanya918.github.io/Website/
