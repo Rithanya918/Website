@@ -72,7 +72,7 @@ const Projects = () => {
       details:
         'Detailed description of your third project. Highlight achievements, technical challenges overcome, and results.', // 👈 Change this
       github: 'https://github.com/Rithanya918/your-repo-name-3', // 👈 Add your GitHub URL
-      demo: 'https://your-demo-url-3.com', // 👈 Add your live demo URL (or remove this line if no demo)
+      demo: 'https://github.com/Rithanya918/Payanam', // 👈 Add your live demo URL (or remove this line if no demo)
     },
   ];
 
