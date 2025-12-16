@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { Plane, Calendar, Heart, X, ExternalLink, Github, DollarSign } from 'lucide-react';
+import { Plane, Calendar, Heart, X, ExternalLink, Github } from 'lucide-react';
 
 interface Project {
   title: string;
@@ -41,34 +41,38 @@ const Projects = () => {
   // ⬇️ EDIT YOUR PROJECTS HERE ⬇️
   const projects: Project[] = [
     {
-      title: 'Payanam AI',
-      description: 'An intelligent travel companion that personalizes your journey',
-      icon: Plane,
-      color: 'from-teal-400 to-blue-400',
-      techStack: ['Python', 'SQL', 'React', 'NLP','TensorFlow','API Integration'],
-      details: 'Payanam AI is an AI-powered travel assistant that creates personalized itineraries based on user preferences, budget, and interests. It uses machine learning to understand travel patterns and suggests optimal routes, accommodations, and activities. The system learns from user feedback to improve recommendations over time.',
-      github: 'https://github.com/Rithanya918/Payanam',
-      demo: 'https://github.com/Rithanya918/Payanam',
+      title: 'Payanam AI', // 👈 Change this
+      description: 'An intelligent travel companion that personalizes your journey', // 👈 Change this
+      icon: Plane, // 👈 Keep or change icon (Plane, Calendar, Heart, etc.)
+      color: 'from-teal-400 to-blue-400', // 👈 Keep or change gradient
+      techStack: ['Python', 'SQL', 'React', 'NLP','TensorFlow','API Integration'], // 👈 Add your tech stack
+      details:
+        'Payanam AI is an AI-powered travel assistant that creates personalized itineraries based on user preferences, budget, and interests. It uses machine learning to understand travel patterns and suggests optimal routes, accommodations, and activities. The system learns from user feedback to improve recommendations over time.', // 👈 Change this
+      github: 'https://github.com/Rithanya918/Payanam', // 👈 Add your GitHub URL
+      demo: 'https://github.com/Rithanya918/Payanam', // 👈 Add your live demo URL (or remove this line if no demo)
     },
     {
-      title: 'PricingIQ',
-      description: 'Dynamic Pricing suggestion Engine powered by AI & ML',
-      icon: DollarSign,
-      color: 'from-blue-400 to-purple-400',
-      techStack: ['Python', 'Huggingface', 'Machine Learning', 'SQL'],
-      details: 'PricingIQ is an intelligent pricing engine that leverages machine learning algorithms to provide dynamic pricing suggestions. The system analyzes market trends, competitor pricing, demand patterns, and historical data to recommend optimal pricing strategies that maximize revenue while remaining competitive.',
-      github: 'https://github.com/Rithanya918/Payanam',
-      demo: 'https://huggingface.co/spaces/Rithanya918/CGPricing_dupe3',
+      title: 'PricinIQ', // 👈 Change this
+      description: 'Dynamic Pricing suggestion Engine powered by AI & ML', // 👈 Change this
+      icon: dollers, // 👈 Keep or change icon
+      color: 'from-blue-400 to-purple-400', // 👈 Keep or change gradient
+      techStack: ['Python', 'Hugginface', 'Machine Learning', 'SQL'], // 👈 Add your tech stack
+      details:
+        'Detailed description of your second project. ' +
+             'Include key features, impact, and technical highlights.', // 👈 Change this
+      github: 'https://github.com/Rithanya918/Payanam', // 👈 Add your GitHub URL
+      demo: 'https://huggingface.co/spaces/Rithanya918/CGPricing_dupe3', // 👈 Add your live demo URL (or remove this line if no demo)
     },
     {
-      title: 'Project 3 Title',
-      description: 'Short one-line description of your project',
-      icon: Heart,
-      color: 'from-purple-400 to-pink-400',
-      techStack: ['Python', 'Tableau', 'Power BI', 'ETL'],
-      details: 'Detailed description of your third project. Highlight achievements, technical challenges overcome, and results.',
-      github: 'https://github.com/Rithanya918/your-repo-name-3',
-      demo: 'https://your-demo-url-3.com',
+      title: 'Project 3 Title', // 👈 Change this
+      description: 'Short one-line description of your project', // 👈 Change this
+      icon: Heart, // 👈 Keep or change icon
+      color: 'from-purple-400 to-pink-400', // 👈 Keep or change gradient
+      techStack: ['Python', 'Tableau', 'Power BI', 'ETL'], // 👈 Add your tech stack
+      details:
+        'Detailed description of your third project. Highlight achievements, technical challenges overcome, and results.', // 👈 Change this
+      github: 'https://github.com/Rithanya918/your-repo-name-3', // 👈 Add your GitHub URL
+      demo: 'https://your-demo-url-3.com', // 👈 Add your live demo URL (or remove this line if no demo)
     },
   ];
 
@@ -195,7 +199,7 @@ const Projects = () => {
 
             <div className="flex gap-4">
               {selectedProject.github && (
-                
+                <a
                   href={selectedProject.github}
                   className="flex-1 flex items-center justify-center gap-2 px-6 py-3 bg-gray-800 dark:bg-gray-700 text-white rounded-full hover:bg-gray-700 dark:hover:bg-gray-600 transition-colors duration-300"
                 >
@@ -204,7 +208,7 @@ const Projects = () => {
                 </a>
               )}
               {selectedProject.demo && (
-                
+                <a
                   href={selectedProject.demo}
                   className="flex-1 flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-teal-500 to-blue-500 text-white rounded-full hover:shadow-lg transition-all duration-300"
                 >
