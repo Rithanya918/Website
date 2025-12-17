@@ -50,7 +50,7 @@ const Hero = () => {
             <div className="w-48 h-48 rounded-full bg-gradient-to-br from-teal-400 via-blue-400 to-purple-400 p-1 shadow-2xl">
               <div className="w-full h-full rounded-full bg-white dark:bg-gray-900 p-1.5 flex items-center justify-center">
                 <img 
-                  src="/profile.jpg" 
+                  src="/profile.png" 
                   alt="Rithanya Sekar"
                   className="w-full h-full rounded-full object-cover hover:scale-105 transition-transform duration-300"
                 />
