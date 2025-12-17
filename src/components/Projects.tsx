@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { Plane, Calendar, Heart, X, ExternalLink, Github } from 'lucide-react';
+import { Plane, Calendar, Heart, X, ExternalLink, Github, DollarSign } from 'lucide-react';
 
 interface Project {
   title: string;
@@ -54,7 +54,7 @@ const Projects = () => {
     {
       title: 'PricinIQ', // 👈 Change this
       description: 'Dynamic Pricing suggestion Engine powered by AI & ML', // 👈 Change this
-      icon: dollers, // 👈 Keep or change icon
+      icon: DollarSign, // 👈 Keep or change icon
       color: 'from-blue-400 to-purple-400', // 👈 Keep or change gradient
       techStack: ['Python', 'Hugginface', 'Machine Learning', 'SQL'], // 👈 Add your tech stack
       details:
