@@ -54,7 +54,7 @@ const Projects = () => {
     {
       title: 'PricinIQ', // 👈 Change this
       description: 'Dynamic Pricing suggestion Engine powered by AI & ML', // 👈 Change this
-      icon: DollarSign, // 👈 Keep or change icon
+      icon: Heart, // 👈 Keep or change icon
       color: 'from-blue-400 to-purple-400', // 👈 Keep or change gradient
       techStack: ['Python', 'Hugginface', 'Machine Learning', 'SQL'], // 👈 Add your tech stack
       details:
